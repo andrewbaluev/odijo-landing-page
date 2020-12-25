@@ -9,7 +9,7 @@
         } else {
             header.classList.remove('header__active');
         }
-    }
+    };
 }());
 
 // BURGER HANDLER
@@ -20,24 +20,23 @@
     const menuCloseItem = document.querySelector('.header__nav-close');
     const menuLinks = document.querySelectorAll('.header__link');
     burgerItem.addEventListener('click', () => {
-        menu.classList.add('header__nav-active')
+        menu.classList.add('header__nav-active');
     });
     menuCloseItem.addEventListener('click', () => {
-        menu.classList.remove('header__nav-active')
+        menu.classList.remove('header__nav-active');
     });
     if (window.innerWidth <= 767) {
         for (let i = 0; i < menuLinks.length; i += 1) {
             menuLinks[i].addEventListener('click', () => {
                 menu.classList.remove('header__nav-active');
             });
-        }
-    }
-}())
+        };
+    };
+}());
 
 
 // SCROLL to anchors
 (function () {
-
     const smoothScroll = function (targetEl, duration) {
         const headerElHeight =  document.querySelector('.header').clientHeight;
         let target = document.querySelector(targetEl);
@@ -52,7 +51,7 @@
             return -c / 2 * (t * (t - 2) - 1) + b;
         };
     
-        const animation = function(currentTime){
+        const animation = function(currentTime) {
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
             const run = ease(timeElapsed, startPosition, targetPosition, duration);
@@ -60,7 +59,6 @@
             if (timeElapsed < duration) requestAnimationFrame(animation);
         };
         requestAnimationFrame(animation);
-
     };
 
     const scrollTo = function () {
