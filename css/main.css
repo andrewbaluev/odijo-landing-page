@@ -474,21 +474,27 @@ img {
  }
 
 .top__card-pic {
+    overflow: hidden;
     position: relative;
     margin-bottom: 45px;
  }
 
+ .top__card-pic:hover .top__card-stats {
+    bottom: 0;
+ }
+
 .top__card-stats {
+    padding: 16px 25px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     position: absolute;
-    bottom: 0;
+    bottom: -56px;
     left: 0;
     width: 100%;
     background: rgba(21, 24, 36, 0.6); 
-    padding: 16px 25px;
+    transition: bottom .3s ease;
 }
 
 .top__card-title {
